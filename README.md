@@ -59,8 +59,3 @@ Subdiviser les US en tâches de
 Modélisation et BD
 Maquettage et Prototypage
 Codage
-
-
-
-
-
