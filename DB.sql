@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS sessionCours (
     FOREIGN KEY (id_cours) REFERENCES cours(id),
     FOREIGN KEY (id_salle) REFERENCES salle(id)
 );
+ALTER TABLE sessionCours MODIFY date DATE FORMAT 'dd/mm/yyyy';
 
 CREATE TABLE IF NOT EXISTS demande_annulation (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -114,6 +115,17 @@ CREATE TABLE IF NOT EXISTS inscription (
     FOREIGN KEY (id_etudiant) REFERENCES etudiant(id),
     FOREIGN KEY (id_classe) REFERENCES classe(id)
 );
+
+ALTER TABLE cours ADD FOREIGN KEY (semestre_id) REFERENCES semestre(id);
+
+DELIMITER $$
+CREATE TRIGGER matricule
+BEFORE UPDATE ON etudiant
+FOR EACH ROW
+BEGIN
+    SET NEW.matricule = CONCAT('MAT', LPAD(FLOOR(RAND() * 1000000), 4, '0'));
+END$$
+DELIMITER ;
 
 -- Définir le délimiteur pour la fonction
 DELIMITER $$

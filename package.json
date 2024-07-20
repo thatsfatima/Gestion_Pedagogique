@@ -1,0 +1,27 @@
+{
+  "name": "gestion_pedagogique",
+  "version": "1.0.0",
+  "description": "Gestion Pédagogique",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatsfatima/Gestion_Pedagogique.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatsfatima/Gestion_Pedagogique/issues"
+  },
+  "homepage": "https://github.com/thatsfatima/Gestion_Pedagogique#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.6"
+  },
+  "dependencies": {
+    "composer": "^4.1.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "fatoumata/gestion_pedagogique",
+    "autoload": {
+        "psr-4": {
+            "Apps\\": "src/",
+            "Apps\\App\\": "src/App/",
+            "Apps\\App\\Controllers\\": "src/App/Controllers/",
+            "Apps\\App\\Model\\": "src/App/Model/",
+            "Apps\\App\\Entity\\": "src/App/Entity/",
+            "Apps\\Core\\": "src/Core/",
+            "Apps\\Core\\Controller\\": "src/Core/Controller/",
+            "Apps\\Core\\Database\\": "src/Core/Database/",
+            "Apps\\Core\\Entity\\": "src/Core/Entity/",
+            "Apps\\Core\\Model\\": "src/Core/Model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "gitfa01",
+            "email": "mbenguef2001@gmail.com"
+        }
+    ],
+    "require": {}
+}
