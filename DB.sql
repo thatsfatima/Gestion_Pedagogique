@@ -118,6 +118,11 @@ CREATE TABLE IF NOT EXISTS inscription (
 
 ALTER TABLE cours ADD FOREIGN KEY (semestre_id) REFERENCES semestre(id);
 
+INSERT INTO role (libelle) VALUES ('RP'), ('Professeur'), ('Attache'), ('Etudiant') ;
+
+INSERT INTO user (nom, prenom, telephone, email, login, password, id_role) 
+VALUES ('Fatou', 'Koita', '773234545', 'fatoukoita@gmail.com', 'fatoukoita@gmail.com', SHA2('Passer123!', 256), (SELECT id FROM role WHERE libelle = 'Professeur'));
+
 DELIMITER $$
 CREATE TRIGGER matricule
 BEFORE UPDATE ON etudiant

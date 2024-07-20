@@ -1,5 +1,5 @@
 <?php
-namespace Apps\Core;
+namespace Apps\Core\Security;
 
 use Apps\App\App;
 final class SecurityDatabase

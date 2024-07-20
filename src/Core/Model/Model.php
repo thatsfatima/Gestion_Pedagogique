@@ -13,6 +13,9 @@ use \PDO;
       $this->database = $database;
     }
 
+    public function getDb() {
+        return $this->database;
+    }
 
     public function all(){
     
@@ -25,11 +28,11 @@ use \PDO;
     public function findByPhone($telephone){
       
     }
-    public static function query(string $sql,array $data, $class, bool $single = false) {
+    public function query(string $sql,array $data, $class, bool $single = false) {
         if ($single) {
-            return static::$database->prepare($sql, $data, $class, $single);
+            return $this->database->prepare($sql, $data, $class, $single);
         } else {
-            return static::$database->query($sql, $class, $single);
+            return $this->database->query($sql, $class, $single);
         }
     }
 

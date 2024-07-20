@@ -40,7 +40,7 @@
             <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
               Sign in
             </h2>
-            <form action="" class="w-full">
+            <form action="../getlogin" method="post" class="w-full">
               <div id="input" class="flex flex-col w-full my-5">
                 <label for="login" class="text-[#42A7B5] mb-2"
                   >Login</label
@@ -48,6 +48,7 @@
                 <input
                   type="text"
                   id="login"
+                  name="login"
                   placeholder="Your login"
                   class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
                 />
@@ -59,13 +60,14 @@
                 <input
                   type="password"
                   id="password"
+                  name="password"
                   placeholder="Your password"
                   class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
                 />
               </div>
               <div id="button" class="flex flex-col w-full my-5">
                 <button
-                  type="button"
+                  type="submit"
                   class="w-full py-4 bg-green-600 rounded-lg text-green-100"
                 >
                   <div class="flex flex-row items-center justify-center">
@@ -92,7 +94,7 @@
                   <a
                     href="#"
                     class="w-full text-center font-medium text-[#42A7B5]"
-                    >Sign up!</a
+                    >École 221</a
                   >
                 </div>
               </div>

@@ -3,6 +3,7 @@ namespace Apps\App\Controllers;
 
 use Apps\App\Model\UserModel;
 use Apps\Core\Controller\Controller;
+use Apps\Core\Security\SecurityDatabase;
 use Apps\App\App;
 
 class SecurityController extends Controller {
@@ -21,7 +22,12 @@ class SecurityController extends Controller {
         if ($this->request->isPost()) {
             $login = $this->request->getPost("login");
             $password = $this->request->getPost("password");
-            $logged = UserModel->connect($login, $password);
+            $logged = $this->userModel->connect($login, $password);
+            var_dump($logged);
+            $logged = serialize($logged);
+            if (!empty($logged)) {
+                $this->renderView("acceuil", $logged);
+            }
             return;
         } else {
             $this->renderView("login");
@@ -29,7 +35,7 @@ class SecurityController extends Controller {
         }
         $this->renderView("login");
     }
-    
+
     public function logout() {
         $this->renderView("login");
         $this->session->destroy();

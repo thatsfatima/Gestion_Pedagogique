@@ -4,6 +4,7 @@ use Apps\Core\Router;
 
 Router::get("", "SecurityController", "login");
 Router::get("login", "SecurityController", "login");
+Router::post("getlogin", "SecurityController", "login");
 Router::post("add-client", "ClientController", "addClient");
 Router::post("check-client", "ClientController", "searchClientByTel");
 Router::post("list-paiement", "ListDetteController", "ListPayementByOneDette");

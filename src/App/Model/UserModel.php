@@ -6,7 +6,7 @@ use Apps\App\App;
 
 class UserModel extends Model {
    
-    protected string $table = "User";
+    protected string $table = "user";
 
     public function __construct() {
         $this->database = App::getDatabase();
@@ -16,9 +16,9 @@ class UserModel extends Model {
         return UserEntity::class;
     }
 
-    public function connect() {
-        $this->database->connect();
-        
+    public function connect($login, $password) {
+        $sql = "SELECT * FROM ".$this->table." u JOIN role r ON r.id = u.id_role WHERE login = ? AND password = SHA2(?, 256)";
+        return $this->query($sql, [$login, $password], "Apps\App\Entity\UserEntity", true);
     }
 }
 ?>
