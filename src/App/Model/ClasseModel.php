@@ -3,22 +3,22 @@ namespace Apps\App\Model;
 
 use Apps\App\App;
 use Apps\Core\Model\Model;
-use Apps\App\Entity\ClientEntity;
+use Apps\App\Entity\ClasseEntity;
 
-class ClientModel extends Model{
-    protected string $table = "Client";
+class ClasseModel extends Model{
+    protected string $table = "Classe";
 
     public function __construct() {
         $this->database = App::getDatabase();
     }
 
     public function getEntity() {
-        return ProfesseurEntity::class;
+        return ClasseEntity::class;
     }
-    
-    public function getDb() {
-        return CoursModel::$database;
-    }
-}
 
+    public function getDb() {
+        return ClasseModel::$database;
+    }
+
+}
 ?>

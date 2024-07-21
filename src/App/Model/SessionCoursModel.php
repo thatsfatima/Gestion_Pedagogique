@@ -16,5 +16,8 @@ class SessionCoursModel extends Model{
         return SessionCoursEntity::class;
     }
 
+    public function getDb() {
+        return CoursModel::$database;
+    }
 }
 ?>
